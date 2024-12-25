@@ -35,7 +35,7 @@ pipeline {
             }
             steps {
                 sh '''
-                    sudo chown -R node /usr/local/lib/node_modules
+                    chown -R node /usr/local/lib/node_modules
                     npm install -g netlify-cli
                     netlify --version
                     echo "Deploying to production. Site ID: $NETLIFY_SITE_ID"
