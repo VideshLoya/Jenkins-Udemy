@@ -17,6 +17,7 @@ pipeline {
             steps {
                 sh '''
                     ls -la
+                    whoami
                     node --version
                     npm --version
                     npm install
