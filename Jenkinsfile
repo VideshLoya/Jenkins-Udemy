@@ -17,7 +17,6 @@ pipeline {
             steps {
                 sh '''
                     ls -la
-                    whoami
                     node --version
                     npm --version
                     npm install
@@ -37,6 +36,7 @@ pipeline {
             steps {
                 sh '''
                     npm install -g netlify-cli
+                    sudo chown -R node /usr/local/lib/node_modules
                     netlify --version
                     echo "Deploying to production. Site ID: $NETLIFY_SITE_ID"
                 '''
